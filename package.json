@@ -35,9 +35,11 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
+      "npm run prettier:check",
       "npm run prettier:format"
     ],
     "**/*.{css,scss,md,html,json}": [
+      "npm run prettier:check",
       "npm run prettier:format"
     ]
   },
