@@ -1,6 +1,7 @@
+"use Client";
 import React from "react";
-import Image from "next/image";
 import localFont from "next/font/local";
+import MenuMobile from "./MenuMobile";
 
 const showdex = localFont({
   src: "../fonts/Showdex.ttf",
@@ -11,31 +12,25 @@ const showdex = localFont({
 const Menu = () => {
   return (
     <nav>
-      <ul className="flex justify-between px-10 py-5 bg-white items-center">
-        <h1 className={`w-3/6 text-5xl ${showdex.className} text-red-500`}>
+      <div className="flex justify-between px-14 py-5 bg-white items-center">
+        <h1
+          className={`w-50 text-5xl ${showdex.className} text-venturaprimary`}
+        >
           Ventura
         </h1>
-        <div className="flex w-2/6 justify-between font-bold text-2xl px-20">
+        <MenuMobile />
+        <ul className="justify-between w-50 font-bold text-2xl hidden md:flex">
           <li>
             <div className="cursor-pointer">Blog</div>
           </li>
           <li>
-            <div className="cursor-pointer">Guias</div>
+            <div className="cursor-pointer md:pl-10">Guias</div>
           </li>
           <li>
-            <div className="cursor-pointer">Destinos</div>
+            <div className="cursor-pointer md:pl-10">Destinos</div>
           </li>
-        </div>
-        <div className="flex 1/6 justify-end">
-          <Image
-            src="https://i.pravatar.cc/500"
-            width={50}
-            height={50}
-            alt="Avatar picture"
-            className="rounded-full"
-          />
-        </div>
-      </ul>
+        </ul>
+      </div>
     </nav>
   );
 };
