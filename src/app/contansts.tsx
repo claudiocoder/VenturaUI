@@ -1,21 +1,32 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SideNavItem } from "./types";
+import {
+  faBook,
+  faEarthAmerica,
+  faHouse,
+} from "@fortawesome/free-solid-svg-icons";
+import { faReadme } from "@fortawesome/free-brands-svg-icons";
 
 export const SIDENAV_ITEMS: SideNavItem[] = [
   {
     title: "Inicio",
     path: "/",
+    icon: <FontAwesomeIcon icon={faHouse} />,
   },
   {
     title: "Blog",
     path: "/blog",
+    icon: <FontAwesomeIcon icon={faReadme} />,
   },
   {
     title: "Guias",
     path: "/destinos",
+    icon: <FontAwesomeIcon icon={faBook} />,
   },
   {
     title: "Destinos",
     path: "/destinos",
+    icon: <FontAwesomeIcon icon={faEarthAmerica} />,
   },
 ];
 

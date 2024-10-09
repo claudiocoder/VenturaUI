@@ -36,7 +36,7 @@ const HeaderMobile = () => {
       ref={containerRef}
     >
       <motion.div
-        className="absolute inset-0 right-0 w-full bg-indigo-950"
+        className="absolute inset-0 right-0 w-full bg-venturaprimary"
         variants={sidebar}
       />
       <motion.ul
@@ -55,19 +55,22 @@ const HeaderMobile = () => {
                   <Link
                     href={item.path}
                     onClick={() => toggleOpen()}
-                    className={`flex w-full text-2xl ${
+                    className={`flex w-full text-4xl ${
                       item.path === pathname
                         ? "font-bold text-white"
-                        : "text-venturaprimary"
+                        : "text-white"
                     }`}
                   >
-                    {item.title}
+                    <div className="flex items-center">
+                      <span className="text-xl pr-5">{item.icon}</span>
+                      <span>{item.title}</span>
+                    </div>
                   </Link>
                 </MenuItem>
               )}
 
               {!isLastItem && (
-                <MenuItem className="my-3 h-[2px] w-full bg-venturaprimary" />
+                <MenuItem className="my-3 h-[2px] w-full bg-white" />
               )}
             </div>
           );
