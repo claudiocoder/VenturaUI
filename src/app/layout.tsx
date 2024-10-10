@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import Menu from "./components/Menu";
+config.autoAddCss = false;
 
 export const roboto = Roboto({
   subsets: ["latin"],
@@ -23,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.className} antialiased`}>
-        <div>
+        <div className="w-full">
           <Menu />
           <div>{children}</div>
         </div>

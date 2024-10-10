@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        venturaprimary: "#FF6712",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
