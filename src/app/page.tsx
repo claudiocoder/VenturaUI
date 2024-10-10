@@ -1,3 +1,9 @@
+import CoverImage from "./components/CoverImage";
+
 export default function Home() {
-  return <></>;
+  return (
+    <div>
+      <CoverImage />
+    </div>
+  );
 }
