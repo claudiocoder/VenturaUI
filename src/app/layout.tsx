@@ -6,7 +6,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import Menu from "./components/Menu";
 config.autoAddCss = false;
 
-export const roboto = Roboto({
+const roboto = Roboto({
   subsets: ["latin"],
   display: "swap",
   weight: ["400"],
