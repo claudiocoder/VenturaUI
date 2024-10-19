@@ -1,3 +1,4 @@
+import Link from "next/link";
 import CoverImage from "./components/CoverImage";
 import { getAllPostsMeta } from "./lib/mdx";
 
@@ -6,7 +7,11 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col">
-      <CoverImage />
+      <CoverImage
+        heigth={"45vh"}
+        title="Descubre tu próxima aventura"
+        subtitle="Guias para mochileros y viajeros frecuentes"
+      />
       <div>
         {posts.length === 0 && (
           <div className="mt-10 p-10 w-[100%]">
@@ -24,17 +29,19 @@ export default async function Home() {
           {posts.length > 0 &&
             posts.map((post) => (
               <div key={post.id} className="shadow-xl rounded-2xl">
-                <div
-                  className="w-[300px] h-[225px] flex rounded-xl items-center text-center justify-end flex-col py-5 cursor-pointer"
-                  style={{
-                    background: `linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('${post.thumbnailUrl}')`,
-                    backgroundSize: "cover",
-                  }}
-                >
-                  <h3 className="text-white z-20 text-2xl font-bold text-stroke-3">
-                    {post.title}
-                  </h3>
-                </div>
+                <Link href={post.slug as string}>
+                  <div
+                    className="w-[300px] h-[225px] flex rounded-xl items-center text-center justify-end flex-col py-5 cursor-pointer"
+                    style={{
+                      background: `linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('${post.cardThumbnailUrl}')`,
+                      backgroundSize: "cover",
+                    }}
+                  >
+                    <h3 className="text-white z-20 text-2xl font-bold text-stroke-3">
+                      {post.title}
+                    </h3>
+                  </div>
+                </Link>
               </div>
             ))}
         </div>
