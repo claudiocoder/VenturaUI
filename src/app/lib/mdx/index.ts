@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { Blog } from "../../models/Blog";
+import { MDXComponents } from "./components";
 
 const rootDirectory = path.join(process.cwd(), "src", "content", "blog");
 export const getPostBySlug = async (slug: string) => {
@@ -12,6 +13,7 @@ export const getPostBySlug = async (slug: string) => {
 
   const { frontmatter, content } = await compileMDX<Blog>({
     source: fileContent,
+    components: MDXComponents,
     options: { parseFrontmatter: true },
   });
 

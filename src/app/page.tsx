@@ -29,7 +29,7 @@ export default async function Home() {
           {posts.length > 0 &&
             posts.map((post) => (
               <div key={post.id} className="shadow-xl rounded-2xl">
-                <Link href={post.slug as string}>
+                <Link href={post.slug}>
                   <div
                     className="w-[300px] h-[225px] flex rounded-xl items-center text-center justify-end flex-col py-5 cursor-pointer"
                     style={{

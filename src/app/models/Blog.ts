@@ -7,4 +7,5 @@ export interface Blog {
   author: string;
   description: string;
   cardThumbnailUrl: string;
+  country: string;
 }
