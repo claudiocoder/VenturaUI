@@ -4,27 +4,44 @@ import styles from "../css/coverImage.module.css";
 
 const { heroWrapper, imageWrapper, heroContent } = styles;
 
-const CoverImage = () => {
+interface CoverImageProps {
+  heigth?: number | string;
+  thumbnailUrl?: string;
+  title?: string;
+  subtitle?: string;
+  imgposition?: string;
+}
+
+const CoverImage = (props: CoverImageProps) => {
+  const {
+    heigth,
+    thumbnailUrl = "/img/cover.jpg",
+    imgposition = "center 25%",
+  } = props;
   return (
-    <div className={heroWrapper}>
+    <div className={heroWrapper} style={{ height: `${heigth}` }}>
       <div className={imageWrapper}>
         <Image
           className="z-[-1]"
           priority
-          src={"/img/cover.jpg"}
+          src={thumbnailUrl}
           fill={true}
-          style={{ objectFit: "cover", objectPosition: "center 25%" }}
+          style={{ objectFit: "cover", objectPosition: `${imgposition}` }}
           alt="hero image example"
         />
       </div>
 
       <div className={heroContent}>
-        <h1 className="text-3xl md:text-6xl text-white text-center [text-shadow:_0px_1px_4px_#d7d7d7]">
-          Descubre tu próxima aventura
-        </h1>
-        <p className="text-base md:text-2xl text-white text-center py-2 md:py-5">
-          Guias para mochileros y viajeros frecuentes
-        </p>
+        {props.title && (
+          <h1 className="text-4xl md:text-6xl text-white text-center [text-shadow:_0px_1px_4px_#d7d7d7]">
+            {props.title}
+          </h1>
+        )}
+        {props.subtitle && (
+          <p className="text-base md:text-2xl text-white text-center py-2 md:py-5">
+            {props.subtitle}
+          </p>
+        )}
       </div>
     </div>
   );

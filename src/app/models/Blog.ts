@@ -6,4 +6,5 @@ export interface Blog {
   date: string;
   author: string;
   description: string;
+  cardThumbnailUrl: string;
 }
