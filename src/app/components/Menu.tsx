@@ -14,7 +14,7 @@ const Menu = () => {
   return (
     <nav>
       <div className="flex justify-between px-14 py-5 bg-white items-center">
-        <Link href={"/"}>
+        <Link href="/">
           <h1
             className={`w-50 text-5xl ${showdex.className} text-venturaprimary`}
           >

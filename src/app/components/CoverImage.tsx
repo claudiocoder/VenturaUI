@@ -6,10 +6,12 @@ const { heroWrapper, imageWrapper, heroContent } = styles;
 
 interface CoverImageProps {
   heigth?: number | string;
+  width?: number | string;
   thumbnailUrl?: string;
   title?: string;
   subtitle?: string;
   imgposition?: string;
+  className?: string;
 }
 
 const CoverImage = (props: CoverImageProps) => {
@@ -17,9 +19,13 @@ const CoverImage = (props: CoverImageProps) => {
     heigth,
     thumbnailUrl = "/img/cover.jpg",
     imgposition = "center 25%",
+    width: width = "100%",
   } = props;
   return (
-    <div className={heroWrapper} style={{ height: `${heigth}` }}>
+    <div
+      className={heroWrapper}
+      style={{ height: `${heigth}`, width: `${width}` }}
+    >
       <div className={imageWrapper}>
         <Image
           className="z-[-1]"
