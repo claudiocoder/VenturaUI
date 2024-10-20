@@ -30,9 +30,9 @@ const BlogPage = async ({ params }: { params: BlogPageProps }) => {
         title={meta.country}
         imgposition="center 40%"
       />
-      <div className="flex items-start w-full px-[10%] py-10">
+      <div className="flex flex-col md:flex-row items-start w-full px-[10%] py-10">
         <Link href="/">
-          <div className="flex items-center cursor-pointer">
+          <div className="mb-5 flex items-center cursor-pointer">
             <FontAwesomeIcon
               icon={faArrowLeft}
               className="text-venturaprimary"
@@ -42,10 +42,10 @@ const BlogPage = async ({ params }: { params: BlogPageProps }) => {
             </div>
           </div>
         </Link>
-        <div className="px-10">
+        <div className="md:px-10">
           <h1 className="text-3xl md:text-4xl font-bold mb-5">{meta.title}</h1>
-          <div className="flex justify-between items-center mb-10">
-            <div className="flex items-center">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
+            <div className="flex items-center mb-2">
               <Image
                 src={"/img/users/autor.jpg"}
                 alt={"autor"}
