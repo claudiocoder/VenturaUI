@@ -29,7 +29,7 @@ export default function RootLayout({
       <body className={`${roboto.className} antialiased`}>
         <div className="w-full">
           <Menu />
-          <div className="h-screen">{children}</div>
+          <div className="min-h-screen">{children}</div>
           <Fotter />
         </div>
       </body>
