@@ -26,3 +26,19 @@ body {
     -1px 1px 0 black,
     1px 1px 0 black;
 }
+
+li {
+  padding-bottom: 5px;
+}
+
+li:last-child {
+  padding: 0px;
+}
+
+.social-icon {
+  padding-right: 20px;
+}
+
+.social-icon:last-child {
+  padding-right: 0px;
+}

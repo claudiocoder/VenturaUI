@@ -4,6 +4,7 @@ import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import Menu from "./components/Menu";
+import Fotter from "./components/Fotter";
 config.autoAddCss = false;
 
 const roboto = Roboto({
@@ -28,7 +29,8 @@ export default function RootLayout({
       <body className={`${roboto.className} antialiased`}>
         <div className="w-full">
           <Menu />
-          <div>{children}</div>
+          <div className="h-screen">{children}</div>
+          <Fotter />
         </div>
       </body>
     </html>
