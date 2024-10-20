@@ -13,7 +13,7 @@ export default async function Home() {
         title="Descubre tu próxima aventura"
         subtitle="Guias para mochileros y viajeros frecuentes"
       />
-      <div className="mx-10">
+      <div className="flex flex-col md:flex-row px-10 py-10">
         <div>
           {posts.length === 0 && (
             <div className="mt-10 p-10 w-[100%]">
@@ -25,7 +25,7 @@ export default async function Home() {
         </div>
         <div className="flex flex-col w-full md:w-[70%] mb-10">
           {posts.length > 0 && (
-            <h3 className="text-3xl font-bold py-10 text-center md:text-start">
+            <h3 className="text-2xl font-bold text-center md:text-start mb-5">
               Últimos viajes
             </h3>
           )}
@@ -49,8 +49,42 @@ export default async function Home() {
                 </div>
               ))}
           </div>
+          {posts.length >= 6 && (
+            <Link href="/content">
+              <div className="text-venturaprimary w-full text-center py-3 font-bold cursor-pointer">
+                + Ver más
+              </div>
+            </Link>
+          )}
           <div>
             <About />
+          </div>
+        </div>
+        <div className="flex w-full md:w-[30%]">
+          <div className="flex flex-col w-full items-center">
+            <h2 className="text-2xl font-bold text-center mb-10">
+              Mochilero del mes
+            </h2>
+            <div>
+              <div
+                className="w-[250px] h-[370px] flex rounded-xl items-center text-center justify-end flex-col py-5 cursor-pointer"
+                style={{
+                  background: `url('/img/users/autor.jpg')`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                }}
+              >
+                <h3 className="text-white z-20 text-2xl font-bold text-stroke-3">
+                  Claudio Moreno
+                </h3>
+              </div>
+            </div>
+            <Link href="/experiences">
+              <div className="text-venturaprimary w-full text-center py-3 font-bold cursor-pointer">
+                + Ver más historias
+              </div>
+            </Link>
           </div>
         </div>
       </div>
