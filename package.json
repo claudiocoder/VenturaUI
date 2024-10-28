@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier:format": "prettier --write .",
-    "prettier:check": "prettier --check .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "prepare": "husky",
     "cz": "cz"
   },
@@ -44,12 +44,12 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "npm run prettier:check",
-      "npm run prettier:format"
+      "npm run format:check",
+      "npm run format"
     ],
     "**/*.{css,scss,md,html,json}": [
-      "npm run prettier:check",
-      "npm run prettier:format"
+      "npm run format:check",
+      "npm run format"
     ]
   },
   "config": {
