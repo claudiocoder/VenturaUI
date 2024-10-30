@@ -1,4 +1,4 @@
-export interface Blog {
+export interface BlogModel {
   id: string;
   thumbnailUrl: string;
   title: string;
@@ -8,4 +8,5 @@ export interface Blog {
   description: string;
   cardThumbnailUrl: string;
   country: string;
+  visibility: boolean;
 }
