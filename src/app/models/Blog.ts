@@ -8,4 +8,5 @@ export interface BlogModel {
   description: string;
   cardThumbnailUrl: string;
   country: string;
+  visibility: boolean;
 }

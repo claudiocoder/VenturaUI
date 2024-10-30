@@ -1,7 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
+import About from "./components/About";
 import CoverImage from "./components/CoverImage";
 import { getAllPostsMeta } from "./lib/mdx";
-import About from "./components/About";
 
 export default async function Home() {
   const posts = await getAllPostsMeta();
@@ -31,23 +32,27 @@ export default async function Home() {
           )}
           <div className="flex flex-row w-100 justify-between">
             {posts.length > 0 &&
-              posts.map((post) => (
-                <div key={post.id} className="shadow-xl rounded-2xl">
-                  <Link href={post.slug}>
-                    <div
-                      className="w-[300px] h-[225px] flex rounded-xl items-center text-center justify-end flex-col py-5 cursor-pointer"
-                      style={{
-                        background: `linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('${post.cardThumbnailUrl}')`,
-                        backgroundSize: "cover",
-                      }}
-                    >
-                      <h3 className="text-white z-20 text-2xl font-bold text-stroke-3">
-                        {post.title}
-                      </h3>
+              posts.map((post) => {
+                if (post.visibility) {
+                  return (
+                    <div key={post.id} className="shadow-xl rounded-2xl">
+                      <Link href={post.slug}>
+                        <div
+                          className="w-[300px] h-[225px] flex rounded-xl items-center text-center justify-end flex-col py-5 cursor-pointer"
+                          style={{
+                            background: `linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('${post.cardThumbnailUrl}')`,
+                            backgroundSize: "cover",
+                          }}
+                        >
+                          <h3 className="text-white z-20 text-2xl font-bold text-stroke-3">
+                            {post.title}
+                          </h3>
+                        </div>
+                      </Link>
                     </div>
-                  </Link>
-                </div>
-              ))}
+                  );
+                }
+              })}
           </div>
           {posts.length >= 6 && (
             <Link href="/content">
@@ -81,9 +86,21 @@ export default async function Home() {
               </div>
             </div>
             <Link href="/experiences">
-              <div className="text-venturaprimary w-full text-center py-3 font-bold cursor-pointer">
+              <div className="text-venturaprimary w-full text-center py-5 font-bold cursor-pointer">
                 + Ver más historias
               </div>
+            </Link>
+            <div className="text-2xl font-bold text-center my-10">
+              <h2>¿Qué llevar en tu mochila viajera?</h2>
+            </div>
+            <Link href="/backpack">
+              <Image
+                className="z-[-1]"
+                width={250}
+                height={250}
+                src={"/img/backpack.png"}
+                alt="hero image example"
+              />
             </Link>
           </div>
         </div>

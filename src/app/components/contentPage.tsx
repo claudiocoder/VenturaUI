@@ -35,10 +35,10 @@ const ContentPage = (props: ContentPageProps) => {
             </div>
           </div>
         </Link>
-        <div className="md:px-10">
+        <div className="md:px-10 w-full">
           <h1 className="text-3xl md:text-4xl font-bold mb-5">{meta.title}</h1>
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
-            <div className="flex items-center mb-2">
+            <div className="flex items-center">
               <Image
                 src={"/img/users/autor.jpg"}
                 alt={"autor"}
