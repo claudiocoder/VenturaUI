@@ -1,6 +1,6 @@
 import fs from "fs";
-import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
+import path from "path";
 import { BlogModel } from "../../models/Blog";
 import { MDXComponents } from "./components";
 
@@ -21,14 +21,18 @@ export const getPostBySlug = async (slug: string) => {
 };
 
 export const getAllPostsMeta = async () => {
-  const files = fs.readdirSync(rootDirectory);
+  try {
+    const files = fs.readdirSync(rootDirectory);
 
-  const posts = [];
+    const posts = [];
 
-  for (const file of files) {
-    const { meta } = await getPostBySlug(file);
-    posts.push(meta);
+    for (const file of files) {
+      const { meta } = await getPostBySlug(file);
+      posts.push(meta);
+    }
+
+    return posts;
+  } catch (error) {
+    throw new Error("Error");
   }
-
-  return posts;
 };
