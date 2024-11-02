@@ -17,7 +17,7 @@ const Maps = (props: MapsProps) => {
         className="rounded-lg"
         src={props.src}
         width={width || "300"}
-        height={height || "480"}
+        height={height || "auto"}
       ></iframe>
     </div>
   );
