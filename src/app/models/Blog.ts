@@ -9,4 +9,5 @@ export interface BlogModel {
   cardThumbnailUrl: string;
   country: string;
   visibility: boolean;
+  urlMap?: string;
 }

@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { BlogModel } from "../models/Blog";
+import Maps from "./Maps";
 
 interface ContentPageProps {
   meta: BlogModel;
@@ -24,17 +25,24 @@ const ContentPage = (props: ContentPageProps) => {
       transition={{ ease: "easeInOut", duration: 0.3 }}
     >
       <div className="flex flex-col md:flex-row items-start w-full px-[10%] py-10">
-        <Link href="/">
-          <div className="mb-5 flex items-center cursor-pointer">
-            <FontAwesomeIcon
-              icon={faArrowLeft}
-              className="text-venturaprimary"
-            />
-            <div className="text-venturaprimary font-bold text-2xl pl-2">
-              Regresar
+        <div className="flex flex-col h-auto">
+          <Link href="/">
+            <div className="mb-5 flex items-center cursor-pointer">
+              <FontAwesomeIcon
+                icon={faArrowLeft}
+                className="text-venturaprimary"
+              />
+              <div className="text-venturaprimary font-bold text-2xl pl-2">
+                Regresar
+              </div>
             </div>
-          </div>
-        </Link>
+          </Link>
+          <Maps
+            src={meta.urlMap}
+            className="w-full mb-10 shadow-md"
+            height="480"
+          />
+        </div>
         <div className="md:px-10 w-full">
           <h1 className="text-3xl md:text-4xl font-bold mb-5">{meta.title}</h1>
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
