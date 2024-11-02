@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { BlogModel } from "../models/Blog";
+import Maps from "./Maps";
 
 interface ContentPageProps {
   meta: BlogModel;
@@ -34,6 +35,7 @@ const ContentPage = (props: ContentPageProps) => {
               Regresar
             </div>
           </div>
+          <Maps src={meta.urlMap} className="w-full h-96" />
         </Link>
         <div className="md:px-10 w-full">
           <h1 className="text-3xl md:text-4xl font-bold mb-5">{meta.title}</h1>
