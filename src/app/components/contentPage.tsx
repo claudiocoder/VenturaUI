@@ -10,6 +10,8 @@ import Link from "next/link";
 import React from "react";
 import { BlogModel } from "../models/Blog";
 import Maps from "./Maps";
+import SocialMediaScripts from "./SocialMediaScript";
+import SocialMediaShare from "./SocialMediaShare";
 
 interface ContentPageProps {
   meta: BlogModel;
@@ -45,7 +47,7 @@ const ContentPage = (props: ContentPageProps) => {
         </div>
         <div className="md:px-10 w-full">
           <h1 className="text-3xl md:text-4xl font-bold mb-5">{meta.title}</h1>
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-5">
             <div className="flex items-center">
               <Image
                 src={"/img/users/autor.jpg"}
@@ -64,7 +66,9 @@ const ContentPage = (props: ContentPageProps) => {
               </p>
             </div>
           </div>
+          <SocialMediaShare />
           <div>{content}</div>
+          <SocialMediaScripts />
         </div>
       </div>
     </motion.div>
