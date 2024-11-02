@@ -39,11 +39,6 @@ const ContentPage = (props: ContentPageProps) => {
               </div>
             </div>
           </Link>
-          <Maps
-            src={meta.urlMap}
-            className="w-full mb-10 shadow-md"
-            height="480"
-          />
         </div>
         <div className="md:px-10 w-full">
           <h1 className="text-3xl md:text-4xl font-bold mb-5">{meta.title}</h1>
@@ -68,6 +63,14 @@ const ContentPage = (props: ContentPageProps) => {
           </div>
           <SocialMediaShare />
           <div>{content}</div>
+          <div className="flex flex-col items-center justify-center w-50 my-10">
+            <h2 className="text-3xl font-bold mb-5">Ruta mochilera</h2>
+            <Maps
+              className="rounded-lg w-full md:w-1/2"
+              src={meta.urlMap}
+              height="400"
+            />
+          </div>
           <SocialMediaScripts />
         </div>
       </div>
