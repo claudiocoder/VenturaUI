@@ -55,7 +55,7 @@ export default async function Home() {
               })}
           </div>
           {posts.length >= 6 && (
-            <Link href="/content">
+            <Link href="/blog">
               <div className="text-venturaprimary w-full text-center py-3 font-bold cursor-pointer">
                 + Ver más
               </div>
