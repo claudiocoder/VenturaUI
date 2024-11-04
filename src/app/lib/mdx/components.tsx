@@ -15,9 +15,7 @@ export const MDXComponents = {
         src={props.src}
         alt={props.alt}
         {...props}
-        className={
-          "mx-auto my-10 shadow-[0_5px_15px_rgba(0,0,0,0.35)] mb-2 rounded-lg"
-        }
+        className={"mx-auto my-10 shadow-xl mb-2 rounded-lg"}
       />
     );
   },

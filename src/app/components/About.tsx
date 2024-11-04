@@ -14,7 +14,7 @@ export const About = () => {
             alt={"autor"}
             width={150}
             height={150}
-            className="rounded-full shadow-2xl mb-5"
+            className="rounded-full shadow-xl mb-5"
           />
           <p className="font-bold text-center w-full">Claudio Moreno</p>
         </div>
