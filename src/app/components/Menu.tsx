@@ -1,8 +1,8 @@
 "use Client";
-import React from "react";
 import localFont from "next/font/local";
-import MenuMobile from "./MenuMobile";
+import Image from "next/image";
 import Link from "next/link";
+import MenuMobile from "./MenuMobile";
 
 const showdex = localFont({
   src: "../fonts/Showdex.ttf",
@@ -15,11 +15,21 @@ const Menu = () => {
     <nav>
       <div className="flex justify-between px-14 py-5 bg-white items-center">
         <Link href="/">
-          <h1
-            className={`w-50 text-5xl ${showdex.className} text-venturaprimary`}
-          >
-            Ventura
-          </h1>
+          <div className="flex items-center">
+            <Image
+              src="/img/logo.png"
+              alt="Ventura"
+              width={70}
+              height={70}
+              className="mr-5"
+            />
+
+            <h1
+              className={`w-50 text-5xl ${showdex.className} text-venturaprimary`}
+            >
+              Cabala Viajera
+            </h1>
+          </div>
         </Link>
         <MenuMobile />
         <ul className="justify-between w-50 font-bold text-2xl hidden md:flex">

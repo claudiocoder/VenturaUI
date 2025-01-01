@@ -10,7 +10,7 @@ export default async function Home() {
   return (
     <div className="flex flex-col">
       <CoverImage
-        heigth={"45vh"}
+        heigth={"50vh"}
         title="Descubre tu próxima aventura"
         subtitle="Guias para mochileros y viajeros frecuentes"
       />
