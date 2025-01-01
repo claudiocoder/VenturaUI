@@ -14,7 +14,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Ventura Blog",
+  title: "Cábala Viajera",
   description:
     "This project is a comprehensive resource for backpackers who are passionate about exploring the world on a budget.",
 };
