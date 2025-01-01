@@ -18,7 +18,7 @@ const Menu = () => {
           <div className="flex items-center">
             <Image
               src="/img/logo.png"
-              alt="Ventura"
+              alt="Cábala Viajera"
               width={70}
               height={70}
               className="mr-5"
@@ -27,7 +27,7 @@ const Menu = () => {
             <h1
               className={`w-50 text-5xl ${showdex.className} text-venturaprimary`}
             >
-              Cabala Viajera
+              Cábala Viajera
             </h1>
           </div>
         </Link>
