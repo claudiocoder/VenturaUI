@@ -22,19 +22,18 @@ export const About = () => {
           <span className="font-bold">Hola, mi nombre es Claudio</span>
           <br />
           <div className="my-1">
-            Soy desarrollador de software y viajero mochilero. Eh visitado 8
-            paises y 20 ciudades alrededor del mundo en tres años y escribo este
-            blog para compartir mis experiencias y poder ayudar a otros viajeros
-            con las dudas que yo tenia cuando planeaba mis viajes.
-            <br /> Me gusta cumplir mis sueños viajando y escuchar a otros
-            compartir sus aventuras alrededor del mundo. Espero pueda animarte a
-            descubrir tu próximo destino. Si tienes alguna historia que te
-            gustaría compartir con los demás viajeros, no dudes en contactarme.
+            Soy desarrollador de software y viajero mochilero. He visitado 8
+            países y 20 ciudades alrededor del mundo en tres años. Escribo este
+            blog para compartir mis experiencias y ayudar a otros viajeros con
+            las dudas que yo tenía cuando planeaba mis viajes. Espero que este
+            blog te inspire y te ayude a descubrir tu próximo destino. Si tienes
+            alguna historia que te gustaría compartir con otros viajeros, no
+            dudes en contactarme. ¡Buen viaje!
           </div>
           <br />
           <span className="italic text-gray-500">
-            Mi objetivo viajero es darle la vuelta al mundo en 6 meses y conocer
-            todos los estadios de baseball de la MLB.
+            Cábala viajera: &quot;Tomar foto al pasaporte antes de subir al
+            avión y escuchar Infinity Repeating de The Voidz&quot;
           </span>
         </div>
       </div>

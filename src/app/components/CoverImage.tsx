@@ -39,7 +39,7 @@ const CoverImage = (props: CoverImageProps) => {
 
       <div className={heroContent}>
         {props.title && (
-          <h1 className="text-4xl md:text-6xl text-white text-center [text-shadow:_0px_1px_4px_#d7d7d7]">
+          <h1 className="text-4xl md:text-6xl text-white text-center [text-shadow:_0px_1px_2px_#d7d7d7]">
             {props.title}
           </h1>
         )}

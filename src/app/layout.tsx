@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
-import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import Menu from "./components/Menu";
+import type { Metadata } from "next";
+import { Roboto } from "next/font/google";
 import Fotter from "./components/Fotter";
+import Menu from "./components/Menu";
+import "./globals.css";
 config.autoAddCss = false;
 
 const roboto = Roboto({
@@ -14,7 +14,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Cábala Viajera",
+  title: "Cabala Viajera",
   description:
     "This project is a comprehensive resource for backpackers who are passionate about exploring the world on a budget.",
 };
