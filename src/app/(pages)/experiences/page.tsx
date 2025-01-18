@@ -1,5 +1,5 @@
 import React from "react";
-import Backpacker from "../components/Backpacker";
+import Backpacker from "../../components/Backpacker";
 
 const Experiences = () => {
   return (

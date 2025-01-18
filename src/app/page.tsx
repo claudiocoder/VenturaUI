@@ -1,3 +1,4 @@
+import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
 import Link from "next/link";
 import About from "./components/About";
@@ -5,8 +6,8 @@ import CoverImage from "./components/CoverImage";
 import { getAllPostsMeta } from "./lib/mdx";
 
 export default async function Home() {
+  const user = await currentUser();
   const posts = await getAllPostsMeta();
-
   return (
     <div className="flex flex-col">
       <CoverImage
@@ -25,9 +26,18 @@ export default async function Home() {
           )}
         </div>
         <div className="flex flex-col w-full md:w-[70%] mb-10">
+          {user ? (
+            <h2 className="text-3xl font-bold text-center md:text-start mb-16">
+              {`¡Hola ${user?.firstName}! ¿Qué aventura te gustaría descubrir hoy?`}
+            </h2>
+          ) : (
+            <h2 className="text-3xl font-bold text-center md:text-start mb-16">
+              {`¡Hola mochileros! ¿Qué aventura te gustaría descubrir hoy?`}
+            </h2>
+          )}
           {posts.length > 0 && (
             <h3 className="text-2xl font-bold text-center md:text-start mb-5">
-              Últimos viajes
+              Últimos posts
             </h3>
           )}
           <div className="flex flex-row w-100 justify-between">

@@ -1,3 +1,4 @@
+import { ClerkProvider } from "@clerk/nextjs";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import type { Metadata } from "next";
@@ -25,14 +26,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${roboto.className} antialiased`}>
-        <div className="w-full">
-          <Menu />
-          <div className="min-h-screen">{children}</div>
-          <Fotter />
-        </div>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={`${roboto.className} antialiased`}>
+          <div className="w-full">
+            <Menu />
+            <div className="min-h-screen">{children}</div>
+            <Fotter />
+          </div>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
