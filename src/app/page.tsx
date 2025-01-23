@@ -32,7 +32,7 @@ export default async function Home() {
             </h2>
           ) : (
             <h2 className="text-3xl font-bold text-center md:text-start mb-16">
-              {`¡Hola mochileros! ¿Qué aventura te gustaría descubrir hoy?`}
+              {`¡Hola mochilero! ¿Qué aventura te gustaría descubrir hoy?`}
             </h2>
           )}
           {posts.length > 0 && (
@@ -46,7 +46,7 @@ export default async function Home() {
                 if (post.visibility) {
                   return (
                     <div key={post.id} className="shadow-xl rounded-2xl">
-                      <Link href={post.slug}>
+                      <Link href={`blog/${post.slug}`}>
                         <div
                           className="w-[300px] h-[225px] flex rounded-xl items-center text-center justify-end flex-col py-5 cursor-pointer"
                           style={{
@@ -103,7 +103,7 @@ export default async function Home() {
             <div className="text-2xl font-bold text-center my-10">
               <h2>¿Qué llevar en tu mochila viajera?</h2>
             </div>
-            <Link href="/backpack">
+            <Link href="blog/backpack">
               <Image
                 className="z-[-1]"
                 width={250}

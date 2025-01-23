@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
-import ContentPage from "../../components/contentPage";
-import CoverImage from "../../components/CoverImage";
-import { getPostBySlug } from "../../lib/mdx";
-import { BlogModel } from "../../models/Blog";
+import ContentPage from "../../../components/contentPage";
+import CoverImage from "../../../components/CoverImage";
+import { getPostBySlug } from "../../../lib/mdx";
+import { BlogModel } from "../../../models/Blog";
 
 const getPageContent = async (slug: string) => {
   const { meta, content } = await getPostBySlug(slug);
