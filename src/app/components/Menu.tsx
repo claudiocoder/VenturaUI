@@ -41,9 +41,14 @@ const Menu = () => {
             <div className="cursor-pointer">
               {!user ? (
                 pathname !== "/login" ? (
-                  <button className="bg-venturaprimary px-8 py-2 radius rounded-lg text-white text-xl">
-                    <Link href="/login">Iniciar sesión</Link>
-                  </button>
+                  <div className="flex items-center gap-4">
+                    <button className="bg-venturaprimary px-8 py-2 radius rounded-lg text-white text-xl">
+                      <Link href="/signUp">Registrarse</Link>
+                    </button>
+                    <button className="bg-venturaprimary px-8 py-2 radius rounded-lg text-white text-xl">
+                      <Link href="/signIn">Iniciar sesión</Link>
+                    </button>
+                  </div>
                 ) : null
               ) : (
                 <div className="flex items-center gap-4">

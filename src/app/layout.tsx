@@ -1,3 +1,4 @@
+import { esMX } from "@clerk/localizations";
 import { ClerkProvider } from "@clerk/nextjs";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -26,8 +27,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en">
+    <ClerkProvider
+      localization={{
+        ...esMX,
+        formFieldInputPlaceholder__emailAddress:
+          "Ingresa tu correo electrónico",
+        signIn: {
+          start: {
+            title: "Iniciar sesión en {{applicationName}}",
+            __experimental_titleCombined: "Iniciar sesión o registrarse",
+          },
+        },
+      }}
+      appearance={{
+        layout: {
+          logoImageUrl: "/img/logo.png",
+        },
+      }}
+    >
+      <html lang="es">
         <body className={`${roboto.className} antialiased`}>
           <div className="w-full">
             <Menu />
