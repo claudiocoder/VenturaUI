@@ -8,6 +8,10 @@ RUN npm install
 
 COPY . .
 
+# Set the environment variables (if needed)
+ENV NODE_ENV=development
+ENV NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=$NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+
 EXPOSE 3000
 
 CMD [ "npm", "run", "dev" ]

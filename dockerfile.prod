@@ -25,6 +25,7 @@ COPY --from=builder /usr/src/app/package.json ./package.json
 
 # Set the environment variables (if needed)
 ENV NODE_ENV=production
+ENV NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=$NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
 
 EXPOSE 3000
 
