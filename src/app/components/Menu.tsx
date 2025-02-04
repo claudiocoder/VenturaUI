@@ -1,10 +1,11 @@
 "use client";
-import { SignOutButton, useUser } from "@clerk/nextjs";
+
 import localFont from "next/font/local";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+
 import MenuMobile from "./MenuMobile";
+import UserLogin from "./UserLogin";
 
 const showdex = localFont({
   src: "../fonts/Showdex.ttf",
@@ -13,8 +14,6 @@ const showdex = localFont({
 });
 
 const Menu = () => {
-  const { user } = useUser();
-  const pathname = usePathname();
   return (
     <nav>
       <div className="flex justify-between px-14 py-5 bg-white items-center">
@@ -38,36 +37,7 @@ const Menu = () => {
         <MenuMobile />
         <ul className="justify-between w-50 font-bold text-2xl hidden md:flex">
           <li>
-            <div className="cursor-pointer">
-              {!user ? (
-                pathname !== "/login" ? (
-                  <div className="flex items-center gap-4">
-                    <button className="bg-venturaprimary px-8 py-2 radius rounded-lg text-white text-xl">
-                      <Link href="/signUp">Registrarse</Link>
-                    </button>
-                    <button className="bg-venturaprimary px-8 py-2 radius rounded-lg text-white text-xl">
-                      <Link href="/signIn">Iniciar sesión</Link>
-                    </button>
-                  </div>
-                ) : null
-              ) : (
-                <div className="flex items-center gap-4">
-                  <div className="rounded-full overflow-hidden border-2 border-venturaprimary">
-                    <Image
-                      src={user.imageUrl}
-                      alt={user.username || "profileImageurl"}
-                      width={50}
-                      height={50}
-                    />
-                  </div>
-                  <SignOutButton>
-                    <button className="bg-venturaprimary px-8 py-2 radius rounded-lg text-white text-xl">
-                      Salir
-                    </button>
-                  </SignOutButton>
-                </div>
-              )}
-            </div>
+            <UserLogin />
           </li>
         </ul>
       </div>

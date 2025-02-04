@@ -13,6 +13,7 @@ import {
 import { SideNavItem } from "../types";
 import { motion, useCycle } from "framer-motion";
 import useDimensions from "../hooks/useDimetions";
+import UserLogin from "./UserLogin";
 
 type MenuItemWithSubMenuProps = {
   item: SideNavItem;
@@ -30,52 +31,56 @@ const HeaderMobile = () => {
       initial={false}
       animate={isOpen ? "open" : "closed"}
       custom={height}
-      className={`fixed inset-0 z-50 w-full md:hidden ${
+      className={`inset-0 z-50 w-full md:hidden ${
         isOpen ? "" : "pointer-events-none"
       }`}
       ref={containerRef}
     >
       <motion.div
-        className="absolute inset-0 right-0 w-full bg-venturaprimary"
+        className="absolute inset-0 right-0 w-full bg-venturaprimary py-[20%]"
         variants={sidebar}
-      />
-      <motion.ul
-        variants={variants}
-        className="absolute grid w-full gap-3 px-10 py-16 max-h-screen overflow-y-auto"
       >
-        {SIDENAV_ITEMS.map((item, idx) => {
-          const isLastItem = idx === SIDENAV_ITEMS.length - 1; // Check if it's the last item
+        <motion.div className="flex px-10 items-center h-20">
+          <UserLogin toggleOpen={toggleOpen} />
+        </motion.div>
+        <motion.ul
+          variants={variants}
+          className="absolute grid w-full gap-3 px-10 py-4 max-h-screen overflow-y-auto"
+        >
+          {SIDENAV_ITEMS.map((item, idx) => {
+            const isLastItem = idx === SIDENAV_ITEMS.length - 1; // Check if it's the last item
 
-          return (
-            <div key={idx}>
-              {item.submenu ? (
-                <MenuItemWithSubMenu item={item} toggleOpen={toggleOpen} />
-              ) : (
-                <MenuItem>
-                  <Link
-                    href={item.path}
-                    onClick={() => toggleOpen()}
-                    className={`flex w-full text-4xl ${
-                      item.path === pathname
-                        ? "font-bold text-white"
-                        : "text-white"
-                    }`}
-                  >
-                    <div className="flex items-center">
-                      <span className="text-xl pr-5">{item.icon}</span>
-                      <span>{item.title}</span>
-                    </div>
-                  </Link>
-                </MenuItem>
-              )}
+            return (
+              <div key={idx}>
+                {item.submenu ? (
+                  <MenuItemWithSubMenu item={item} toggleOpen={toggleOpen} />
+                ) : (
+                  <MenuItem>
+                    <Link
+                      href={item.path}
+                      onClick={() => toggleOpen()}
+                      className={`flex w-full text-2xl ${
+                        item.path === pathname
+                          ? "font-bold text-white"
+                          : "text-white"
+                      }`}
+                    >
+                      <div className="flex items-center">
+                        <span className="text-xl pr-5">{item.icon}</span>
+                        <span>{item.title}</span>
+                      </div>
+                    </Link>
+                  </MenuItem>
+                )}
 
-              {!isLastItem && (
-                <MenuItem className="my-3 h-[2px] w-full bg-white" />
-              )}
-            </div>
-          );
-        })}
-      </motion.ul>
+                {!isLastItem && (
+                  <MenuItem className="my-3 h-[2px] w-full bg-white" />
+                )}
+              </div>
+            );
+          })}
+        </motion.ul>
+      </motion.div>
       <MenuToggle toggle={toggleOpen} />
     </motion.nav>
   );
