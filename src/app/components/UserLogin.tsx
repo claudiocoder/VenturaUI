@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 type UserLoginProps = {
-  toggleOpen: () => void;
+  toggleOpen?: () => void;
 };
 
 const UserLogin = (props: UserLoginProps) => {
